@@ -333,15 +333,16 @@ static void create_beamng_screen(void)
     int cx = start_x + col * cell_w + cell_w / 2;
     int cy = start_y + row * cell_h + cell_h / 2;
 
-    /* Clickable container (transparent, sized to icon) */
-    lv_obj_t *btn = lv_obj_create(scr_beamng);
-    lv_obj_set_size(btn, 72, 72);
-    lv_obj_set_pos(btn, cx - 36, cy - 36);
-    lv_obj_set_style_bg_opa(btn, LV_OPA_TRANSP, 0);
-    lv_obj_set_style_border_opa(btn, LV_OPA_TRANSP, 0);
-    lv_obj_set_style_pad_all(btn, 0, 0);
-    lv_obj_remove_flag(btn, LV_OBJ_FLAG_SCROLLABLE);
-    lv_obj_add_flag(btn, LV_OBJ_FLAG_CLICKABLE);
+    /* Button with background matching icon bg (#0d0d0d) */
+    lv_obj_t *btn = lv_button_create(scr_beamng);
+    lv_obj_set_size(btn, 66, 66);
+    lv_obj_set_pos(btn, cx - 33, cy - 33);
+    lv_obj_set_style_bg_color(btn, lv_color_hex(0x0D0D0D), 0);
+    lv_obj_set_style_bg_color(btn, lv_color_hex(0x3A3A3A), LV_STATE_PRESSED);
+    lv_obj_set_style_bg_opa(btn, LV_OPA_COVER, 0);
+    lv_obj_set_style_radius(btn, 8, 0);
+    lv_obj_set_style_pad_all(btn, 1, 0);
+    lv_obj_set_style_shadow_width(btn, 0, 0);
     lv_obj_add_event_cb(btn, beamng_btn_click_cb, LV_EVENT_CLICKED,
                          (void *)(uintptr_t)i);
     /* HID: held while finger is down (only button 0 for now) */
