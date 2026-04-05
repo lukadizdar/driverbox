@@ -75,6 +75,18 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     Core/Src/ui_screens.c
     Core/Src/images/img_haz1.c
     Core/Src/images/img_haz2.c
+    Core/Src/images/img_lights_off.c
+    Core/Src/images/img_lights_on.c
+    Core/Src/images/img_lights_high.c
+    Core/Src/images/img_abs_off.c
+    Core/Src/images/img_abs_on.c
+    Core/Src/images/img_esc_off.c
+    Core/Src/images/img_esc_on.c
+    Core/Src/images/img_pbrake_off.c
+    Core/Src/images/img_pbrake_on.c
+    Core/Src/images/img_range.c
+    Core/Src/images/img_diff_open.c
+    Core/Src/images/img_diff_locked.c
 )
 
 # Add include paths
